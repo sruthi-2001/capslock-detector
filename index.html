@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+#text {display:none;color:red}
+	#grad1 {
+  height: 600px;
+  background-image: linear-gradient(to right, rgba(231, 182, 235), rgba(222, 89, 233),rgba(233, 77, 159));
+}
+</style>
+<body>
+<div id="grad1">
+<h1>Detect Caps Lock</h1>
+<p><h2>Press the "Caps Lock" key inside the input field to trigger the function.</h2></p>
+
+<input id="myInput" value="Some text..">
+<p id="text">WARNING! Caps lock is ON.</p>
+
+<script>
+var input = document.getElementById("myInput");
+var text = document.getElementById("text");
+input.addEventListener("keyup", function(event) {
+
+if (event.getModifierState("CapsLock")) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none"
+  }
+});
+</script>
+</div>
+</body>
+</html>
